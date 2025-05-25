@@ -1,0 +1,229 @@
+/* #213547 Color  */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: #213547;
+}
+
+.btn-color {
+  background: #213547;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #213547;
+  color: whitesmoke;
+}
+
+/*############ Register/Login ***** PPage CSS ############******* */
+
+/* ############# Image contaier Left side ######### */
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #376879;
+}
+
+.img-container img {
+  width: 60%;
+}
+
+/* $$$$$$$$$$ Right Container Form Side $$$$$$$$$$$$$$$$ */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-inputs {
+  margin: 0 100%;
+}
+
+.form-h1 {
+  font-size: 49px;
+  font-weight: 300;
+}
+
+.form-h4 {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.register-p {
+  text-transform: capitalize;
+  font-size: 19px;
+  padding: 8px;
+}
+
+.register-login {
+  text-decoration: none;
+  color: #82aebc;
+}
+
+.register-login:hover {
+  border-bottom: 1px solid black;
+}
+
+.register-btn {
+  width: 70%;
+  margin: 15px 9px;
+  padding: 10px;
+  font-size: 17px;
+  background-color: #376879;
+  color: white;
+  border-radius: 25px;
+  border: none;
+}
+
+.right-sides {
+  padding: 5%;
+}
+
+.input {
+  width: 90%;
+}
+
+/*######## CSS For Header #########  */
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ######### Home page CSS  ##################### */
+.main-container {
+  background-color: #98d6e1;
+  border-radius: 30px;
+  color: #213547;
+  padding: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @@@@@@@@@@ Footer Section CSS @@@@@@@@@@@@ */
+
+.footer-container {
+  background-color: #98d6e1;
+  color: #213547;
+  margin-top: 1rem;
+}
+
+.footer-ul li {
+  color: #213547;
+  margin: 6px 0;
+}
+
+.icon-cls {
+  border: 2px solid #213547;
+  border-radius: 50%;
+  padding: 0px 6px;
+  margin: 10px 0px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!! About section css !!!!!!!!!!!!!!!!!!!!!! */
+.ab-icon {
+  padding: 8px 16px;
+  border-radius: 50%;
+  background-color: #98d6e1;
+  text-align: center;
+  color: #213547;
+}
+
+/* Card Scetion */
+.card-section {
+  display: flex;
+
+  flex-direction: row;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%  Showcase CSS %%%%%%%%%%%%%%%%%%%%% */
+.showcase {
+  /* height: 800px; */
+  background-color: #98d6e1;
+  color: #213547;
+  margin: 0 auto;
+}
+
+/* !!!!!!!! DASHBORAD CSS !!!!!!!!! */
+.nav-links {
+  text-decoration: none;
+  background-color: white;
+  padding: 9px;
+  border-radius: 12px;
+  color: #213547;
+}
+
+@media screen and (max-width: 990px) {
+  .main-container {
+    height: 50%;
+  }
+
+  .image-home {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .left-side {
+    text-align: center;
+  }
+
+  .right-side {
+    flex-direction: column;
+  }
+
+  .card-div {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .img-container {
+    height: 45%;
+  }
+}
+
+/*  */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  margin: 5rem auto;
+  /* grid-template-areas: "center"; */
+  /* justify-content: center;  */
+  /* align-items: center; */
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 12px 12px;
+  animation: l12 1s infinite;
+}
+.loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes l12 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}

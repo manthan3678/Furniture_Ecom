@@ -1,0 +1,40 @@
+// #################### *SchemaUser*
+const userSchema = mongoose.Schema({
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+  },
+  email: {
+    type: String,
+    unique: true,
+  },
+});
+const Users = mongoose.model("users", userSchema);
+//users ka data lene dene k liye allusers ka use krre hai jisme schema bi kam kkrra hai or vo data base se connect bi hai
+app.get("/api/allusers", async (req, res) => {
+  const Allusers = await Users.find({});
+  res.json(Allusers);
+});
+//###### POST Method use kr k Data Base me  Store krre hai
+app.post("/api/allusers", async (req, res) => {
+  // humne condition lagaye kagar data field empty hai to msg ayega or nhi hai empyt field to database me jayega
+  if (!req.body || req.body.firstName || req.body.lastName || req.body.email) {
+    await Users.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+    })
+      .then(() => {
+        res.send("Data Stored Successfully");
+        console.log("DaTa stored successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    res.send("Data is Empty");
+  }
+});
