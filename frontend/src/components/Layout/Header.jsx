@@ -48,14 +48,6 @@ const Header = () => {
             </li>
 
             <li className="nav=item">
-              <NavLink className="text-decoration-none" to="/about">
-                <a className="nav-link " aria-current="page">
-                  About-us
-                </a>
-              </NavLink>
-            </li>
-
-            <li className="nav=item">
               <NavLink className="text-decoration-none" to="/contact">
                 <a className="nav-link " aria-current="page">
                   Contact-us

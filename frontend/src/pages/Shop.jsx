@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
 import ShopLayout from "../components/shopComponent/ShopLayout";
-import axios from "axios";
 import ShopContent from "../components/shopComponent/ShopContent";
 import "../App.css";
 
 const Shop = () => {
   const [shopdata, setShopData] = useState({});
   const [isloading, setIsLoading] = useState(true);
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/shop")
-      .then((result) => {
-        console.log("we have received the data");
-        // console.log(result.data[0]);
-        setShopData(result.data[0]);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/shop")
+  //     .then((result) => {
+  //       console.log("we have received the data");
+  //       // console.log(result.data[0]);
+  //       setShopData(result.data[0]);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
   return (
     <>
       {" "}

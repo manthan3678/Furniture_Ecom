@@ -8,11 +8,6 @@ const JWT = require("jsonwebtoken");
 const HandleRegisterPage = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    // first check honga koi field empty to nhi hai
-    // if (!name || !email || !password) {
-    //   res.send({ success: false, message: "Invalid User" });
-    // }
-    // second condition hai ki koi user already exist to nhi krta hai
     const existingUser = await users.findOne({ email });
     if (existingUser) {
       return res.send({

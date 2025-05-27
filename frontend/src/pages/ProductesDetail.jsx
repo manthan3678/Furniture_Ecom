@@ -15,8 +15,8 @@ const ProductesDetail = () => {
   // console.log(JSON.stringify(productdata));
   const [showAlert, setShowAlert] = useState(false);
   productdata.quantity = qnty;
-  console.log("user ID", auth?.user);
-  console.log(auth?.user?.id);
+  // console.log("user ID", auth?.user);
+  // console.log(auth?.user?.id);
   productdata.id = auth?.user?.id;
   const addCart = () => {
     // first ata hai url fir kya data send krna rehta hai vo dalte hai

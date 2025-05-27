@@ -23,29 +23,8 @@ const Product = () => {
       .catch((error) => {
         console.log(error);
       });
-    axios
-      .get("http://localhost:5000/api/shop")
-      .then((result) => {
-        // console.log("we have received the data");
-        // console.log(result.data[0]);
-        setShopData(result.data[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }, []);
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/api/shop")
-  //     .then((result) => {
-  //       console.log("we have received the data");
-  //       // console.log(result.data[0]);
-  //       setShopData(result.data[0]);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+  //
   return (
     <>
       {isloading ? (

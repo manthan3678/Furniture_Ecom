@@ -1,5 +1,5 @@
 const JWT = require("jsonwebtoken");
-
+const userModel = require("../Models/user-Schema");
 const checkUserAuth = async (req, res, next) => {
   try {
     const check = await JWT.verify(
@@ -18,20 +18,24 @@ const checkUserAuth = async (req, res, next) => {
 };
 const checkAdmin = async (req, res, next) => {
   try {
-    const user = await Users.findById(req.user._id);
-    if (user.role !== 0) {
+    const user = await userModel.findById(req.user._id);
+    if (user.role !== 1) {
       return res.send({
         success: false,
-        message: "Unauthorizd Access",
+        message: "Unauthorizd ADmin Access",
       });
     } else {
+      next();
       return res.send({
         success: true,
-        message: "auhtorization successfully",
+        message: "auhtorization Admin successfully",
       });
     }
   } catch (error) {
-    console.log(error);
+    return res.send({
+      success: true,
+      message: "Error in Admin middleware",
+    });
   }
 };
-module.exports = { checkUserAuth };
+module.exports = { checkUserAuth, checkAdmin };
