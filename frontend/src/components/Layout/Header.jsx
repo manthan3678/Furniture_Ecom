@@ -1,8 +1,9 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../App.css";
-
+import { useAuth } from "../../context/Authorization";
 const Header = () => {
+  const [auth, setAuth] = useAuth();
+  console.log(auth);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary mb-5 mt-3 shadow-lg">
       <div className="container-fluid">
@@ -46,7 +47,55 @@ const Header = () => {
                 </a>
               </NavLink>
             </li>
-
+            {/* !!!!!!!!!! Auth !!!!!!!! */}
+            {!auth?.user ? (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link " to="/register">
+                    Register
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " to="/login">
+                    Login
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <div>
+                  <li className="nav-item dropdown">
+                    <NavLink
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {auth?.user.name}
+                    </NavLink>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <NavLink
+                          className="dropdown-item"
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`}
+                        >
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink className="dropdown-item" to="/login">
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+              </>
+            )}
+            {/* Auth END !!!!!!!!!!!! */}
             <li className="nav=item">
               <NavLink className="text-decoration-none" to="/contact">
                 <a className="nav-link " aria-current="page">

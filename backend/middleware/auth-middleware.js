@@ -24,13 +24,8 @@ const checkAdmin = async (req, res, next) => {
         success: false,
         message: "Unauthorizd ADmin Access",
       });
-    } else {
-      next();
-      return res.send({
-        success: true,
-        message: "auhtorization Admin successfully",
-      });
     }
+    next();
   } catch (error) {
     return res.send({
       success: true,

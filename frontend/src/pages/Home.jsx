@@ -23,7 +23,7 @@ const Home = () => {
         // console.log(result.data[0]);
         setHompageData(result.data[0]);
         setIsloading(false);
-        console.log(JSON.stringify(auth));
+        // console.log(JSON.stringify(auth));
       })
       .catch((error) => {
         console.log(error);
