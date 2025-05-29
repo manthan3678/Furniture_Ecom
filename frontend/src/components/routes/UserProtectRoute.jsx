@@ -3,22 +3,22 @@ import axios from "axios";
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../../context/Authorization";
 import Login from "../../pages/Login";
-import { useCart } from "../../context/CartContext";
+// import { useCart } from "../../context/CartContext";
 
 const UserProtectRoute = () => {
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
-  const [setCart] = useCart();
+  // const [setCart] = useCart();
   useEffect(() => {
     const authCheck = async () => {
       const res = await axios.get("http://localhost:5000/api/auth/user-auth", {
         headers: {
-          Authorization: auth?.token,
+          Authorization: `Bearer ${auth?.token}`,
         },
       });
       if (res.data.ok) {
         setOk(true);
-        setCart(res.data.cartdata);
+        // setCart(res.data.cartdata);
       } else {
         setOk(false);
       }
