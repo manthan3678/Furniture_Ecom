@@ -19,49 +19,49 @@ const sidebar = () => {
       {/* links */}
       <div className="p-2">
         <NavLink
-          to="/admin/dashboard"
+          to="/dashboard/admin"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <MdDashboardCustomize size={26} />
           <div className="ms-3">Dashboard</div>
         </NavLink>
         <NavLink
-          to="/admin/home"
+          to="/dashboard/admin/home"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <FaHome size={26} />
           <div className="ms-3">Home</div>
         </NavLink>
         <NavLink
-          to="/admin/products"
+          to="/dashboard/admin/products"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <FaBox size={26} />
           <div className="ms-3">Products</div>
         </NavLink>
         <NavLink
-          to="/admin/products"
+          to="/dashboard/admin/products"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <FaBox size={26} />
           <div className="ms-3">orders</div>
         </NavLink>
         <NavLink
-          to="/adim/shop"
+          to="/dashboard/admin/shop"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <FaBasketShopping size={26} />
           <div className="ms-3">shop</div>
         </NavLink>
         <NavLink
-          to="/adim/payment"
+          to="/dashboard/admin/payment"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <MdOutlinePayment size={26} />
           <div className="ms-3">Payments</div>
         </NavLink>
         <NavLink
-          to="/admin/users"
+          to="/dashboard/admin/users"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <MdGroups2 size={26} />
@@ -69,14 +69,14 @@ const sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/adim/profile"
+          to="/dashboard/admin/profile"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <CgProfile size={26} />
           <div className="ms-3">Profile</div>
         </NavLink>
         <NavLink
-          to="/adim/logout"
+          to="/dashboard/admin/logout"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <RiLogoutBoxRFill size={26} />

@@ -3,7 +3,7 @@ import "../../App.css";
 import { useAuth } from "../../context/Authorization";
 const Header = () => {
   const [auth, setAuth] = useAuth();
-  console.log(auth);
+  // console.log(auth);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary mb-5 mt-3 shadow-lg">
       <div className="container-fluid">

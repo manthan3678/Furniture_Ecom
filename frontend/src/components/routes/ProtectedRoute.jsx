@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/Authorization";
 import axios from "axios";
 import { Outlet } from "react-router-dom";
-import Login from "../../pages/Login";
+import Spinner from "../Layout/Spinner";
 import { useCart } from "../../context/CartContext";
 const ProtectedRoute = () => {
-  const [auth] = useAuth();
+  const [auth, loading] = useAuth();
   const [ok, setOk] = useState(false);
   const [setCart] = useCart();
-  // console.log(auth?.token);
+  // console.log(auth);
   useEffect(() => {
     const checkToken = async () => {
       const res = await axios.get(`http://localhost:5000/api/auth/admin-auth`, {
         headers: {
-          Authorization: auth?.token,
+          Authorization: `Bearer ${auth?.token}`,
         },
       });
       console.log(res.data);
@@ -29,7 +29,7 @@ const ProtectedRoute = () => {
     }
   }, []);
 
-  return ok ? <Outlet /> : <Login />;
+  return ok ? <Outlet /> : <Spinner path="" />;
 };
 
 export default ProtectedRoute;

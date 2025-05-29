@@ -6,7 +6,7 @@ const Authorization = ({ children }) => {
     user: null,
     token: "",
   });
-  axios.defaults.headers.common["Authorization"] = auth?.token;
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const localData = localStorage.getItem("token");
     console.log(localData);
@@ -17,7 +17,12 @@ const Authorization = ({ children }) => {
         user: parsedData.user,
         token: parsedData.token,
       });
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${parsedData.token}`;
+      //  axios.defaults.headers.common["Authorization"] = `Bearer ${parsed.token}`;
     }
+    setLoading(false); // finish loading
   }, []);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
