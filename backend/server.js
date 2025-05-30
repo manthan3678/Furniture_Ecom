@@ -6,6 +6,7 @@ const HomeRouter = require("./Routes/homepage");
 const UserRouter = require("./Routes/auth");
 const cartRouter = require("./Routes/cart");
 const address = require("./Routes/address");
+const productRouter = require("./Routes/productRoutes");
 //
 const app = express();
 const PORT = 5000;
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //########################################################################
-app.use(cors({ origin: "http://localhost:5174" }));
+app.use(cors({ origin: "http://localhost:5173" }));
 // *********#########mongodb connection ######****************
 connectMongoDB(process.env.MONGODB_URL)
   .then(() => {
@@ -35,6 +36,8 @@ app.use("/api/auth", UserRouter);
 app.use("/api", checkUserAuth, cartRouter);
 //
 app.use("/api", checkUserAuth, address);
+// Product Routes
+app.use("/api/product", productRouter);
 app.listen(PORT, () => {
   console.log(`Server is Running on ${PORT}`);
 });
