@@ -25,10 +25,7 @@ const sidebar = () => {
           <MdDashboardCustomize size={26} />
           <div className="ms-3">Dashboard</div>
         </NavLink>
-        <NavLink
-          to="/dashboard/admin/home"
-          className=" nav-links d-flex align-item-center mb-2"
-        >
+        <NavLink to="/" className=" nav-links d-flex align-item-center mb-2">
           <FaHome size={26} />
           <div className="ms-3">Home</div>
         </NavLink>

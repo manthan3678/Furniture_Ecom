@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //########################################################################
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "http://localhost:5174" }));
 // *********#########mongodb connection ######****************
 connectMongoDB(process.env.MONGODB_URL)
   .then(() => {
