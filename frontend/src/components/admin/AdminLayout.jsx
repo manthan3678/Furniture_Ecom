@@ -4,12 +4,12 @@ import AdminHeader from "./AdminHeader";
 
 const AdminLayout = ({ children }) => {
   return (
-    <div className="d-flex vh-100 bg-dark">
+    <div className="d-flex vh-100">
       <div className="row vw-100 ">
-        <div className="col-3 ">
+        <div className="col-3 bg-dark">
           <Sidebar />
         </div>
-        <div className="col-9 bg-light">
+        <div className="col-9 bg-light ">
           <AdminHeader />
           {children}
         </div>

@@ -11,7 +11,7 @@ import { RiLogoutBoxRFill } from "react-icons/ri";
 import { MdGroups2 } from "react-icons/md";
 const sidebar = () => {
   return (
-    <div className="fluid-container ">
+    <div className="fluid-container position-sticky top-0 z-3">
       {/* images logo */}
       <div className="p-2 text-white">
         <h2>MAAN</h2>

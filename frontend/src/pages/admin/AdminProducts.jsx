@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/Authorization";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const AdminProducts = () => {
   // const [categories, setCategories] = useState([]);
   const [photo, setPhoto] = useState("");
@@ -14,7 +15,7 @@ const AdminProducts = () => {
   const [price, setPrice] = useState("");
   const [shipping, setShipping] = useState("");
   const [auth, setAuth] = useAuth();
-
+  const navigate = useNavigate();
   //
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -46,6 +47,7 @@ const AdminProducts = () => {
       );
       if (data?.success) {
         toast.success("Product Created SuccessFully");
+        navigate("/dashboard/admin/product-shop");
       } else {
         toast.error("Something Went Wrong");
       }
