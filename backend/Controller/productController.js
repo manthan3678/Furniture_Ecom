@@ -1,6 +1,5 @@
 const slugify = require("slugify");
 const productModel = require("../Models/productSchema");
-const { param } = require("../Routes/productRoutes");
 // Create Product  !!!!!!!!!!!!!
 const createProductController = async (req, res) => {
   try {
