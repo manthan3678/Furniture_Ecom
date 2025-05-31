@@ -44,11 +44,11 @@ const sidebar = () => {
           <div className="ms-3">orders</div>
         </NavLink>
         <NavLink
-          to="/dashboard/admin/shop"
+          to="/dashboard/admin/product-shop"
           className=" nav-links d-flex align-item-center mb-2"
         >
           <FaBasketShopping size={26} />
-          <div className="ms-3">shop</div>
+          <div className="ms-3">Product-Shop List</div>
         </NavLink>
         <NavLink
           to="/dashboard/admin/payment"

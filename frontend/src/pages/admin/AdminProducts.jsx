@@ -121,7 +121,7 @@ const AdminProducts = () => {
               </div>
               <div className="mb-3 ">
                 <input
-                  type="number"
+                  type="text"
                   value={shipping}
                   placeholder="Write Yes Or No"
                   className="form-control"

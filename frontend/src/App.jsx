@@ -9,10 +9,13 @@ import Order from "./pages/Order";
 import ProductesDetail from "./pages/ProductesDetail";
 import Cart from "./pages/Cart";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
+//
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminProducts from "./pages/admin/AdminProducts";
+import AdminShop from "./pages/admin/AdminShop";
 import AdminUsers from "./pages/admin/AdminUser";
+//
 import Address from "./pages/Address";
 import UserProtectRoute from "./components/routes/UserProtectRoute";
 const App = () => {
@@ -40,6 +43,7 @@ const App = () => {
             <Route path="admin" element={<AdminDashboard />} />
             <Route path="admin/home" element={<AdminHome />} />
             <Route path="admin/products" element={<AdminProducts />} />
+            <Route path="admin/product-shop" element={<AdminShop />} />
             <Route path="admin/users" element={<AdminUsers />} />
           </Route>
           {/*  */}
