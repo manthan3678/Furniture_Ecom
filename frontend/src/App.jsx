@@ -13,6 +13,7 @@ import ProtectedRoute from "./components/routes/ProtectedRoute";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminProducts from "./pages/admin/AdminProducts";
+import AdminUpdateProduct from "./pages/admin/AdminUpdateProduct";
 import AdminShop from "./pages/admin/AdminShop";
 import AdminUsers from "./pages/admin/AdminUser";
 //
@@ -44,6 +45,10 @@ const App = () => {
             <Route path="admin/home" element={<AdminHome />} />
             <Route path="admin/products" element={<AdminProducts />} />
             <Route path="admin/product-shop" element={<AdminShop />} />
+            <Route
+              path="admin/product/:slug"
+              element={<AdminUpdateProduct />}
+            />
             <Route path="admin/users" element={<AdminUsers />} />
           </Route>
           {/*  */}

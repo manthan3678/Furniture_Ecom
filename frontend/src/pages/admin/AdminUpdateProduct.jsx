@@ -82,9 +82,11 @@ const AdminUpdateProduct = () => {
                     onChange={(e) => setShipping(e.target.value)}
                   />
                 </div>
+                {/*  */}
                 <div className="mb-3">
-                  <button className="btn btn-success" onClick={}>
-                    CREATE PRODUCT
+                  <button className="btn btn-success ">UPDATE PRODUCT</button>
+                  <button className="btn btn-danger mx-5">
+                    DELETE PRODUCT
                   </button>
                 </div>
               </div>

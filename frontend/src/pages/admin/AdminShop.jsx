@@ -45,10 +45,17 @@ const AdminShop = () => {
                 to={`/dashboard/admin/product/${product.slug}`}
                 className="text-decoration-none "
               >
-                <div className="card mx-3 my-2" style={{ width: "19rem" }}>
+                <div
+                  className="card mx-2 my-2"
+                  style={{
+                    width: "20rem",
+                    height: "25rem",
+                    border: "2px solid red",
+                  }}
+                >
                   <img
                     src={product.photo}
-                    className="card-img-top"
+                    className="card-img-top h-75"
                     alt="image"
                   />
                   <div className="card-body">
