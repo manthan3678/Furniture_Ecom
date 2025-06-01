@@ -3,6 +3,7 @@ import loginimg from "../assets/images/loginimg.png";
 import "../App.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Authorization.jsx";
@@ -15,7 +16,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      console.log("subited");
+      // console.log("subited");
       axios
         .post("http://localhost:5000/api/auth/login", {
           email,
@@ -29,11 +30,13 @@ const Login = () => {
               token: result.data.token,
             });
             localStorage.setItem("token", JSON.stringify(result.data));
+            toast.success("Login SuccessFully");
             navigate("/");
           }
         })
         .catch((error) => {
           console.log(error);
+          toast.error("Failed To Login ");
         });
     } catch (error) {
       console.log(error);

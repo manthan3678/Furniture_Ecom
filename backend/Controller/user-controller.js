@@ -23,7 +23,7 @@ const HandleRegisterPage = async (req, res) => {
       email,
       password: encryptedPassword,
     });
-    res.send({
+    return res.send({
       success: true,
       message: "register Successfully",
       user,

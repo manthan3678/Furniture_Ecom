@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,6 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      console.log("submited");
       axios
         .post("http://localhost:5000/api/auth/register", {
           name,
@@ -23,13 +23,15 @@ const Register = () => {
           password,
         })
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           if (result.data.success) {
+            toast(" Sumbited/Register SuccessFully");
             navigate("/login");
           }
         })
         .catch((error) => {
           console.log(error);
+          toast.error("Error in Registration");
         });
     } catch (error) {
       console.log(error);
