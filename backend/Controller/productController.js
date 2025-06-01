@@ -140,10 +140,29 @@ const updateProductController = async (req, res) => {
     });
   }
 };
-//
+// Get Single PRoduct !!!!!!
+const getSingleProduct = async (req, res) => {
+  try {
+    const product = await productModel.findOne({ slug: req.params.slug });
+
+    return res.status(200).send({
+      success: true,
+      message: "Single Product Fetched",
+      product,
+    });
+  } catch (error) {
+    return res.send({
+      error,
+      success: false,
+      message: "Something Wen Wrong In Get Single Product",
+    });
+  }
+};
+
 module.exports = {
   createProductController,
   getProductController,
   deleteProductController,
   updateProductController,
+  getSingleProduct,
 };

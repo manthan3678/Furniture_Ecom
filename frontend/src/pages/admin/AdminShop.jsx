@@ -23,7 +23,7 @@ const AdminShop = () => {
       if (data?.success) {
         setProducts(data.products);
       }
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log(error);
       toast.error("Something Went Wrong In Product List");

@@ -5,6 +5,7 @@ const {
   getProductController,
   deleteProductController,
   updateProductController,
+  getSingleProduct,
 } = require("../Controller/productController");
 // Post Method
 Router.post(
@@ -24,4 +25,6 @@ Router.put(
   checkAdmin,
   updateProductController
 );
+// Get Single Product
+Router.get("/get-single-product/:slug", getSingleProduct);
 module.exports = Router;
